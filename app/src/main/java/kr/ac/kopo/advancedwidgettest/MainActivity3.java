@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.MultiAutoCompleteTextView;
-
+import android.widget.MultiAutoCompleteTextView.CommaTokenizer;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -32,5 +32,10 @@ public class MainActivity3 extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,items);
 
         auto.setAdapter(adapter);
+
+        CommaTokenizer commaToken = new MultiAutoCompleteTextView.CommaTokenizer();
+        multi.setTokenizer(commaToken);
+        multi.setAdapter(adapter);
+
     }
 }
